@@ -32,13 +32,4 @@ const login = async (req, res) => {
   res.status(200).json({ msg: "User Created", token });
 };
 
-const dashboard = (req, res) => {
-  const LuckyNum = Math.floor(Math.random() * 100);
-
-  res.status(200).json({
-    msg: `Hello ,${req.user.username}`,
-    secret: `Your Auth Data is ${LuckyNum}`,
-  });
-};
-
-module.exports = { login, dashboard };
+module.exports = login;

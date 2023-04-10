@@ -5,13 +5,14 @@ const express = require("express");
 const app = express();
 
 const mainRouter = require("./routes/main");
-const notFoundMiddleware = require("./middleware/not-found");
-const errorHandlerMiddleware = require("./middleware/error-handler");
+const notFoundMiddleware = require("./middleware/route-not-found_Mdw");
+const errorHandlerMiddleware = require("./middleware/Error-handler_Mdw");
 
 // In Built-middleware
 app.use(express.static("./public"));
 app.use(express.json());
 
+// Routing
 app.use("/api/v1", mainRouter);
 
 // Custom middleware
